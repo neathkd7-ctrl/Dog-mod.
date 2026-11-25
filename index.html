@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DOG MODS – Minecraft Bedrock Mods</title>
+<style>
+:root{color-scheme:dark;--bg:#0e1014;--bg2:#161920;--card:#1b1f27;--line:#2a2f3a;--tx:#eceef3;--mut:#8d95a5;--acc:#f16436;--acc2:#ff8f4d;--ok:#3fb950;--bad:#f85149;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg2);z-index:10}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(22,25,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hw{max-width:1200px;margin:auto;padding:10px 16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.logo{font-weight:900;font-size:22px;letter-spacing:1px;color:var(--tx)!important;text-decoration:none!important}.logo b{color:var(--acc)}
+#q{flex:1;min-width:160px;max-width:420px;background:var(--bg);border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:9px 14px;font-size:15px;transition:.2s}
+#q:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(241,100,54,.2)}
+nav{display:flex;gap:6px;margin-left:auto;overflow-x:auto;max-width:100%}
+nav a{color:var(--mut);padding:8px 12px;border-radius:8px;white-space:nowrap;font-weight:600;text-decoration:none!important;transition:.2s}
+nav a:hover,nav a.on{color:var(--tx);background:var(--card)}
+nav a.cta{background:var(--acc);color:#fff}
+main{max-width:1200px;margin:auto;padding:20px 16px 60px;min-height:70vh}
+.fade{animation:f .35s ease}@keyframes f{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1{font-size:28px;margin:0 0 6px}h2{font-size:20px;margin:34px 0 14px;display:flex;align-items:center;gap:8px}h2::before{content:"";width:4px;height:20px;background:var(--acc);border-radius:2px}
+.mut{color:var(--mut)}.empty{padding:30px;text-align:center;background:var(--card);border:1px dashed var(--line);border-radius:12px}
+.hero{padding:36px 24px;border-radius:16px;background:radial-gradient(circle at 85% 0,rgba(241,100,54,.35),transparent 55%),var(--bg2);border:1px solid var(--line)}
+.hero h1{font-size:clamp(26px,5vw,42px)}.hero p{max-width:560px;color:var(--mut);margin:8px 0 18px}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff!important;border:0;border-radius:10px;padding:11px 22px;font:700 15px inherit;font-family:inherit;cursor:pointer;transition:.2s;text-decoration:none!important}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(241,100,54,.35)}.btn:disabled{opacity:.5;pointer-events:none}
+.btn.g{background:var(--card);border:1px solid var(--line);color:var(--tx)!important}.btn.s{padding:6px 12px;font-size:13px}.btn.r{background:var(--bad)}.btn.k{background:var(--ok)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chip{background:var(--card);border:1px solid var(--line);color:var(--mut);padding:7px 14px;border-radius:20px;cursor:pointer;font:600 13px inherit;font-family:inherit;transition:.2s}
+.chip:hover{color:var(--tx);border-color:var(--acc)}.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--tx);text-decoration:none!important;transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);border-color:var(--acc);box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--bg2)}.cb{padding:12px}.cb h3{margin:0;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb p{margin:2px 0;font-size:13px}.ds{color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:12px;color:var(--mut)}.tag{background:rgba(241,100,54,.15);color:var(--acc2);padding:2px 9px;border-radius:12px;font-weight:600}
+.det{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:28px;align-items:start}.big{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:18px 0}.facts div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;overflow-wrap:anywhere}
+.facts small{display:block;color:var(--mut);font-size:12px}.desc{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;overflow-wrap:anywhere}
+.st{display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;text-transform:uppercase}.st.pending{background:#5a4a12;color:#ffd24d}.st.approved{background:#12401f;color:var(--ok)}.st.rejected{background:#4a1714;color:var(--bad)}
+.form{max-width:640px;display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+label{display:grid;gap:5px;font-weight:600;font-size:14px}input,select,textarea{background:var(--bg);color:var(--tx);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc)}input[type=file]{padding:8px}
+.list{display:grid;gap:10px}.row{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;flex-wrap:wrap;transition:.2s}.row:hover{border-color:var(--acc)}
+.row img{width:56px;height:56px;border-radius:8px;object-fit:cover}.row .i{flex:1;min-width:150px}.row .a{display:flex;gap:6px;flex-wrap:wrap}
+.prof{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.av{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;font-size:34px;font-weight:800;color:#fff}
+.tabs{display:flex;gap:8px;margin:14px 0}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--ok);color:#fff;padding:11px 20px;border-radius:10px;opacity:0;pointer-events:none;transition:.3s;z-index:20;max-width:92vw;text-align:center;font-weight:600}
+#toast.show{opacity:1;transform:translate(-50%,0)}#toast.bad{background:var(--bad)}
+footer{text-align:center;color:var(--mut);padding:24px;border-top:1px solid var(--line);font-size:13px}
+@media(max-width:720px){.det{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.hw{gap:8px}nav{margin-left:0;width:100%}.hero{padding:24px 16px}}
+</style></head><body>
+<header><div class="hw"><a class="logo" href="#home">🐶 DOG <b>MODS</b></a><input id="q" type="search" placeholder="Search Bedrock mods…" autocomplete="off"><nav id="nav"></nav></div></header>
+<main id="app"><p class="mut empty">Loading DOG MODS…</p></main>
+<footer>DOG MODS · Community Minecraft Bedrock content · Not affiliated with Mojang or Microsoft</footer>
+<div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const S={db:null,as:null,dl:null,uid:null,admin:false,ready:false,ld:0,prof:null,mods:[],profs:{},stats:{},q:"",cat:"",tab:"mods",editp:false,
+ cfg:{cats:["Add-ons","Behavior Packs","Resource Packs","Texture Packs","Skins","Worlds","Maps","Mini-games"],feat:[],banned:[]}};
+const EXT=[".mcaddon",".mcpack",".mcworld",".zip"],MAX=10*1024*1024,VERS=["1.21.x","1.20.x","1.19.x","1.18.x","1.17.x","1.16.x","1.14–1.15","Other"];
+const rid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-3);
+const fs=b=>b>=1048576?(b/1048576).toFixed(1)+" MB":Math.max(1,Math.round(b/1024))+" KB";
+const dls=m=>S.stats[m.id]||0,pub=()=>S.mods.filter(m=>m.status==="approved"),img=m=>`/_blob/${E(m.img)}`;
+const hash=()=>location.hash.slice(1)||"home";
+function T(m,bad){const t=$("#toast");t.textContent=m;t.className="show"+(bad?" bad":"");clearTimeout(T.t);T.t=setTimeout(()=>t.className="",4200)}
+const docs=s=>s.docs.map(d=>({id:d.id,...d.data()}));
+
+/* ---------- views ---------- */
+const card=m=>`<a class="card" href="#mod-${E(m.id)}"><img loading="lazy" src="${img(m)}" alt=""><div class="cb"><h3>${E(m.name)}</h3><p class="mut">by ${E(m.creator)}</p><p class="ds">${E(m.desc)}</p><div class="meta"><span class="tag">${E(m.cat)}</span><span>⬇ ${dls(m)}</span></div></div></a>`;
+const grid=(a,e)=>a.length?`<div class="grid">${a.map(card).join("")}</div>`:`<p class="mut empty">${e||"Nothing here yet."}</p>`;
+function home(){
+ const q=S.q.toLowerCase();let a=pub();
+ if(S.cat)a=a.filter(m=>m.cat===S.cat);
+ if(q)a=a.filter(m=>(m.name+" "+m.desc+" "+m.creator).toLowerCase().includes(q));
+ const hero=`<div class="hero"><h1>Minecraft Bedrock mods, <span style="color:var(--acc)">fetched</span> by the community</h1><p>Discover add-ons, packs, worlds and skins for Minecraft Bedrock Edition – or share your own creations with everyone.</p><a class="btn" href="#upload">⬆ Upload a Mod</a></div>`;
+ const chips=`<div class="chips"><button class="chip ${S.cat?"":"on"}" data-a="cat" data-v="">All</button>${S.cfg.cats.map(c=>`<button class="chip ${S.cat===c?"on":""}" data-a="cat" data-v="${E(c)}">${E(c)}</button>`).join("")}</div>`;
+ if(q||S.cat)return hero+chips+`<h2>${q?"Search results":E(S.cat)}</h2>`+grid(a,"No mods found.");
+ const f=S.cfg.feat.map(id=>a.find(m=>m.id===id)).filter(Boolean);
+ return hero+chips+(f.length?`<h2>Featured Mods</h2>`+grid(f):"")+`<h2>Latest Mods</h2>`+grid([...a].sort((x,y)=>y.created-x.created).slice(0,8),"No mods yet – be the first to upload!")+`<h2>Popular Mods</h2>`+grid([...a].sort((x,y)=>dls(y)-dls(x)).slice(0,8));
+}
+function detail(id){
+ const m=S.mods.find(x=>x.id===id);
+ if(!m||(m.status!=="approved"&&m.owner!==S.uid&&!S.admin))return `<p class="mut empty">Mod not found.</p>`;
+ const p=S.profs[m.owner];
+ return `<div class="det"><img class="big" src="${img(m)}" alt=""><div><h1>${E(m.name)}</h1><p class="mut">by ${p?`<a href="#user-${E(p.h)}">${E(m.creator)}</a>`:E(m.creator)} ${m.status!=="approved"?`<span class="st ${m.status}">${m.status}</span>`:""}</p>
+ <div class="facts"><div><small>Minecraft Version</small>${E(m.ver)}</div><div><small>Category</small>${E(m.cat)}</div><div><small>File Size</small>${fs(m.size)}</div><div><small>Downloads</small>${dls(m)}</div><div><small>Uploaded</small>${new Date(m.created).toLocaleDateString()}</div><div><small>File</small>${E(m.fname)}</div></div>
+ <button class="btn" data-a="dl" data-id="${E(m.id)}">⬇ Download</button> ${m.owner===S.uid||S.admin?`<a class="btn g" href="#edit-${E(m.id)}">Edit</a>`:""}</div></div><h2>Description</h2><div class="desc">${E(m.desc)}</div>`;
+}
+function mform(m){
+ const e=!!m;
+ return `<form class="form" data-f="${e?"edit":"up"}" data-id="${e?E(m.id):""}"><h1>${e?"Edit Mod":"Upload a Mod"}</h1>
+ <label>Mod Name<input name="name" required maxlength="60" value="${E(m?.name)}"></label>
+ <label>Creator Name<input name="creator" required maxlength="40" value="${E(m?.creator||S.prof?.name)}"></label>
+ <label>Category<select name="cat">${S.cfg.cats.map(c=>`<option ${m?.cat===c?"selected":""}>${E(c)}</option>`).join("")}</select></label>
+ <label>Minecraft Version<input name="ver" list="vers" required maxlength="20" value="${E(m?.ver)}" placeholder="e.g. 1.21.x"></label><datalist id="vers">${VERS.map(v=>`<option>${v}</option>`).join("")}</datalist>
+ <label>Description<textarea name="desc" required maxlength="3000" rows="6">${E(m?.desc)}</textarea></label>
+ ${e?"":`<label>Mod Image (400×400 recommended – auto-cropped)<input type="file" name="img" accept="image/*" required></label>
+ <label>Mod File (.mcaddon, .mcpack, .mcworld, .zip · max 10 MB)<input type="file" name="file" accept=".mcaddon,.mcpack,.mcworld,.zip" required></label>`}
+ <button class="btn" id="sub">${e?"Save Changes":"Publish Mod"}</button><p class="mut" id="prog">${e||S.admin?"":"New mods are reviewed by an admin before appearing publicly."}</p></form>`;
+}
+function pform(){
+ const p=S.prof;
+ return `<form class="form" data-f="prof"><h1>${p?"Edit Profile":"Create your profile"}</h1><p class="mut">${p?"":"You’re signed in with your Claude account. Pick a public display name to start sharing mods."}</p>
+ <label>Display Name<input name="name" required maxlength="40" value="${E(p?.name)}"></label><label>About you<textarea name="bio" maxlength="400" rows="3">${E(p?.bio)}</textarea></label>
+ <button class="btn">${p?"Save Profile":"Create Profile"}</button>${p?`<button type="button" class="btn g" data-a="cancelp">Cancel</button>`:""}</form>`;
+}
+const need=()=>`<p class="mut empty">Please sign in to claude.ai and open this page with Contributor (or higher) access to register, upload and manage mods.</p>`;
+const row=(m,adm)=>`<div class="row"><img src="${img(m)}" alt=""><div class="i"><a href="#mod-${E(m.id)}"><b>${E(m.name)}</b></a> <span class="st ${m.status}">${m.status}</span><br><small class="mut">${E(m.cat)} · ${E(m.creator)} · ⬇ ${dls(m)} · ${fs(m.size)}</small></div><div class="a">${adm?
+ `${m.status!=="approved"?`<button class="btn s k" data-a="st" data-v="approved" data-id="${E(m.id)}">Approve</button>`:""}${m.status!=="rejected"?`<button class="btn s g" data-a="st" data-v="rejected" data-id="${E(m.id)}">Reject</button>`:""}${m.status==="approved"?`<button class="btn s g" data-a="feat" data-id="${E(m.id)}">${S.cfg.feat.includes(m.id)?"★ Unfeature":"☆ Feature"}</button>`:""}`
+ :`<a class="btn s g" href="#edit-${E(m.id)}">Edit</a>`}<button class="btn s r" data-a="del" data-id="${E(m.id)}">Delete</button></div></div>`;
+function pHead(p,n){return `<div class="prof"><div class="av">${E((p.name||"?")[0].toUpperCase())}</div><div><h1>${E(p.name)}</h1><p class="mut">${E(p.bio||"")}</p><p class="mut">${n} mod${n===1?"":"s"} published</p></div></div>`}
+function mine(){
+ if(!S.uid)return need();if(!S.prof||S.editp)return pform();
+ const my=S.mods.filter(m=>m.owner===S.uid);
+ return pHead(S.prof,my.filter(m=>m.status==="approved").length)+`<p><button class="btn s g" data-a="editp">Edit profile</button></p><h2>My Uploaded Mods</h2>`+(my.length?`<div class="list">${my.map(m=>row(m)).join("")}</div>`:`<p class="mut empty">You haven’t uploaded anything yet. <a href="#upload">Upload your first mod</a></p>`);
+}
+function userPage(h){
+ const e=Object.entries(S.profs).find(([,p])=>p.h===h);if(!e)return `<p class="mut empty">User not found.</p>`;
+ const a=pub().filter(m=>m.owner===e[0]);return pHead(e[1],a.length)+`<h2>Mods by ${E(e[1].name)}</h2>`+grid(a);
+}
+function admin(){
+ if(!S.admin)return `<p class="mut empty">Admins only.</p>`;
+ const tb=(k,l)=>`<button class="chip ${S.tab===k?"on":""}" data-a="tab" data-v="${k}">${l}</button>`;
+ const pend=S.mods.filter(m=>m.status==="pending").length;let b="";
+ if(S.tab==="mods"){const a=[...S.mods].sort((x,y)=>(x.status==="pending"?0:1)-(y.status==="pending"?0:1)||y.created-x.created);b=a.length?`<div class="list">${a.map(m=>row(m,1)).join("")}</div>`:`<p class="mut empty">No mods uploaded yet.</p>`}
+ if(S.tab==="users"){const a=Object.entries(S.profs);b=a.length?`<div class="list">${a.map(([id,p])=>{const bn=S.cfg.banned.includes(id);return `<div class="row"><div class="av" style="width:44px;height:44px;font-size:20px">${E((p.name||"?")[0].toUpperCase())}</div><div class="i"><b>${E(p.name)}</b> ${bn?`<span class="st rejected">banned</span>`:""}<br><small class="mut">${S.mods.filter(m=>m.owner===id).length} mods</small></div>${id===S.uid?"":`<button class="btn s ${bn?"k":"r"}" data-a="ban" data-id="${E(id)}">${bn?"Unban":"Ban"}</button>`}</div>`}).join("")}</div>`:`<p class="mut empty">No registered users yet.</p>`}
+ if(S.tab==="cats")b=`<div class="list">${S.cfg.cats.map(c=>`<div class="row"><div class="i"><b>${E(c)}</b></div><button class="btn s r" data-a="delcat" data-v="${E(c)}">Remove</button></div>`).join("")}</div><form class="form" data-f="cat" style="margin-top:14px"><label>New category<input name="c" required maxlength="30"></label><button class="btn">Add Category</button></form>`;
+ return `<h1>Admin Dashboard</h1><div class="tabs">${tb("mods","Mods"+(pend?` (${pend} pending)`:""))}${tb("users","Users")}${tb("cats","Categories")}</div>${b}`;
+}
+function R(top){
+ const h=hash(),m=$("#app");let v;
+ $("#nav").innerHTML=`<a href="#home" class="${h==="home"?"on":""}">Home</a><a href="#upload" class="cta">⬆ Upload</a><a href="#mine" class="${h==="mine"?"on":""}">${S.prof?E(S.prof.name):"My Mods"}</a>${S.admin?`<a href="#admin" class="${h==="admin"?"on":""}">Admin</a>`:""}`;
+ if(!S.ready)v=`<p class="mut empty">Loading DOG MODS…</p>`;
+ else if(!S.db&&h!=="home")v=need();
+ else if(h==="home")v=(S.db?"":`<p class="mut empty" style="margin-bottom:14px">Sign in to claude.ai to browse and share mods.</p>`)+home();
+ else if(h.startsWith("mod-"))v=detail(h.slice(4));
+ else if(h==="upload")v=S.banned()?`<p class="mut empty">Your account is not allowed to upload.</p>`:!S.as?`<p class="mut empty">Uploading requires Contributor access to this site. Ask the site owner to upgrade your access.</p>`:!S.prof?pform():mform();
+ else if(h.startsWith("edit-")){const x=S.mods.find(y=>y.id===h.slice(5));v=x&&(x.owner===S.uid||S.admin)?mform(x):`<p class="mut empty">Not allowed.</p>`}
+ else if(h==="mine")v=mine();else if(h.startsWith("user-"))v=userPage(h.slice(5));else if(h==="admin")v=admin();else v=home();
+ m.innerHTML=v;if(top){m.classList.remove("fade");void m.offsetWidth;m.classList.add("fade");scrollTo(0,0)}
+}
+S.banned=()=>S.cfg.banned.includes(S.uid);
+
+/* ---------- data ---------- */
+async function edit(owner,fn){const r=S.db.doc("mods/"+owner),s=await r.get();await r.set({items:fn(s.exists?(s.data().items||[]):[])})}
+const saveCfg=async p=>{S.cfg={...S.cfg,...p};await S.db.doc("config/site").set(S.cfg)};
+function b2s(u){let s="";for(let i=0;i<u.length;i+=32768)s+=String.fromCharCode.apply(null,u.subarray(i,i+32768));return s}
+function square(f){return new Promise((ok,no)=>{const r=new FileReader();r.onerror=()=>no(Error("Could not read image"));r.onload=()=>{const i=new Image();i.onerror=()=>no(Error("Unreadable image"));i.onload=()=>{const c=document.createElement("canvas");c.width=c.height=400;const s=Math.min(i.width,i.height);c.getContext("2d").drawImage(i,(i.width-s)/2,(i.height-s)/2,s,s,0,0,400,400);c.toBlob(b=>b?ok(b):no(Error("Image failed")),"image/jpeg",.88)};i.src=r.result};r.readAsDataURL(f)})}
+async function upload(f){
+ const fd=new FormData(f),g=k=>String(fd.get(k)||"").trim(),file=fd.get("file"),im=fd.get("img"),pr=$("#prog"),bt=$("#sub");
+ const ext="."+file.name.split(".").pop().toLowerCase();
+ if(!EXT.includes(ext))return T("Unsupported file type. Use .mcaddon, .mcpack, .mcworld or .zip.",1);
+ if(!file.size||file.size>MAX)return T("File must be between 1 byte and 10 MB.",1);
+ if(!im.type.startsWith("image/"))return T("The mod image must be an image file.",1);
+ bt.disabled=true;
+ try{
+  const u=new Uint8Array(await file.arrayBuffer());
+  if(u[0]!==0x50||u[1]!==0x4B)throw Error("Not a valid Bedrock package (must be a zip-based archive).");
+  const bs=b2s(u);
+  if(!/manifest\.json|level\.dat|levelname\.txt|\.mcpack|\.mcaddon/.test(bs))throw Error("This doesn’t look like Minecraft Bedrock content (no manifest.json or world data found).");
+  pr.textContent="Processing image…";const ib=await square(im);
+  pr.textContent="Uploading image…";const ia=await S.as.upload(ib);
+  pr.textContent="Uploading mod file…";const fa=await S.as.upload(new Blob([btoa(bs)],{type:"text/plain"}));
+  const m={id:rid(),name:g("name"),creator:g("creator"),cat:g("cat"),ver:g("ver"),desc:g("desc"),img:ia.id,file:fa.id,fname:file.name,size:file.size,created:Date.now(),status:S.admin?"approved":"pending"};
+  await edit(S.uid,a=>[m,...a]);
+  T(S.admin?"Mod published!":"Mod submitted – it will appear after admin approval.");location.hash="mine";
+ }catch(e){T(e.message||"Upload failed",1);bt.disabled=false;pr.textContent=""}
+}
+async function delMod(m){
+ await edit(m.owner,a=>a.filter(x=>x.id!==m.id));
+ for(const id of[m.img,m.file])try{await S.as?.delete(id)}catch(e){}
+ if(S.cfg.feat.includes(m.id))await saveCfg({feat:S.cfg.feat.filter(x=>x!==m.id)});
+ T("Mod deleted.");
+}
+async function download(m){
+ const r=await fetch("/_blob/"+m.file);if(!r.ok)throw Error("File not found in storage.");
+ const bs=atob(await r.text()),u=new Uint8Array(bs.length);for(let i=0;i<bs.length;i++)u[i]=bs.charCodeAt(i);
+ await S.dl.save({filename:m.fname,data:u});
+ S.db.doc("stats/"+m.id).set({n:dls(m)+1}).catch(()=>{});T("Download started: "+m.fname);
+}
+
+/* ---------- events ---------- */
+document.addEventListener("click",async e=>{
+ const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,v=b.dataset.v,id=b.dataset.id,m=S.mods.find(x=>x.id===id);
+ try{
+  if(a==="cat"){S.cat=v;return R()}
+  if(a==="tab"){S.tab=v;return R()}
+  if(a==="editp"||a==="cancelp"){S.editp=a==="editp";return R()}
+  if(a==="dl"){if(!S.dl)return T("Downloads aren’t available in this view.",1);b.disabled=true;try{await download(m)}finally{b.disabled=false}return}
+  if(a==="del"){if(!m||!(m.owner===S.uid||S.admin))return;if(!b.dataset.c){b.dataset.c=1;b.textContent="Confirm?";return setTimeout(()=>{b.dataset.c="";b.textContent="Delete"},3000)}return await delMod(m)}
+  if(!S.admin)return;
+  if(a==="st"){await edit(m.owner,x=>x.map(y=>y.id===id?{...y,status:v}:y));if(v!=="approved"&&S.cfg.feat.includes(id))await saveCfg({feat:S.cfg.feat.filter(x=>x!==id)});T("Mod "+v+".")}
+  if(a==="feat"){const f=S.cfg.feat;await saveCfg({feat:f.includes(id)?f.filter(x=>x!==id):[id,...f]})}
+  if(a==="ban"){const bn=S.cfg.banned;await saveCfg({banned:bn.includes(id)?bn.filter(x=>x!==id):[...bn,id]})}
+  if(a==="delcat")await saveCfg({cats:S.cfg.cats.filter(c=>c!==v)});
+ }catch(x){T(x.message||"Something went wrong",1)}
+});
+document.addEventListener("submit",async e=>{
+ const f=e.target.closest("[data-f]");if(!f)return;e.preventDefault();const k=f.dataset.f,fd=new FormData(f),g=n=>String(fd.get(n)||"").trim();
+ try{
+  if(!S.db)return T("Please sign in first.",1);
+  if(k==="prof"){await S.db.doc("profiles/"+S.uid).set({name:g("name"),bio:g("bio"),h:S.prof?.h||rid()});S.editp=false;T("Profile saved.")}
+  if(k==="up")await upload(f);
+  if(k==="edit"){const id=f.dataset.id,m=S.mods.find(x=>x.id===id);await edit(m.owner,a=>a.map(x=>x.id===id?{...x,name:g("name"),creator:g("creator"),cat:g("cat"),ver:g("ver"),desc:g("desc"),status:S.admin?x.status:"pending"}:x));T("Changes saved.");location.hash="mod-"+id}
+  if(k==="cat"&&S.admin){const c=g("c");if(!S.cfg.cats.includes(c))await saveCfg({cats:[...S.cfg.cats,c]});f.reset()}
+ }catch(x){T(x.message||"Something went wrong",1)}
+});
+$("#q").addEventListener("input",e=>{S.q=e.target.value;hash()==="home"?R():(location.hash="home")});
+addEventListener("hashchange",()=>R(1));
+
+/* ---------- boot ---------- */
+const formy=()=>{const h=hash();return h==="upload"||h.startsWith("edit-")||(h==="mine"&&(S.editp||!S.prof))};
+function tick(){S.prof=S.profs[S.uid]||null;if(!S.ready){if(++S.ld<4)return;S.ready=true;return R(1)}if(!formy())R()}
+(async()=>{
+ R(1);setTimeout(()=>{if(!S.ready){S.ready=true;R()}},11000);
+ const c=window.claude;if(!c){S.ready=true;return R()}
+ const [us,db,as,dl]=await Promise.all(["user","db","assets","downloads"].map(n=>c.use(n).catch(()=>null)));
+ Object.assign(S,{as,dl});
+ if(!us||!db){S.ready=true;return R()}
+ S.db=db;S.uid=await us.id();S.admin=await us.canEdit();
+ const er=x=>{console.error(x);tick()};
+ db.collection("mods").onSnapshot(s=>{S.mods=docs(s).flatMap(d=>(d.items||[]).map(m=>({...m,owner:d.id})));tick()},er);
+ db.collection("profiles").onSnapshot(s=>{S.profs=Object.fromEntries(docs(s).map(d=>[d.id,d]));tick()},er);
+ db.collection("stats").onSnapshot(s=>{S.stats=Object.fromEntries(docs(s).map(d=>[d.id,d.n||0]));tick()},er);
+ db.doc("config/site").onSnapshot(s=>{if(s.exists){const d=s.data();S.cfg={cats:d.cats||S.cfg.cats,feat:d.feat||[],banned:d.banned||[]}}tick()},er);
+})();
+</script></body></html>
